@@ -1,56 +1,24 @@
-/*
- * ============================================================================
- *
- *       Filename:  main.c
- *
- *    Description:  Main execution of the tests using cmocka
- *
- *        Created:  04/28/2016 19:21:37
- *       Compiler:  gcc
- *
- *         Author:  Gustavo Pantuza
- *   Organization:  Software Community
- *
- * ============================================================================
- */
+#include "../src/main.h" // Adjust the path according to your directory structure
 
-
-#include <stdarg.h>
-#include <stddef.h>
-#include <setjmp.h>
-#include <cmocka.h>
-
-
-/* include here your files that contain test functions */
-
-
-
-
-/* A test case that does nothing and succeeds. */
-static void null_test_success(void **state) {
-
-    /**
-     * If you want to know how to use cmocka, please refer to:
-     * https://api.cmocka.org/group__cmocka__asserts.html
-     */
-    (void) state; /* unused */
+// ... your test functions and main function ...
+// Test function for Hotel_info_read
+void test_Hotel_info_read() {
+    printf("Testing Hotel_info_read function...\n");
+    Hotel_info_read(); // Call the function to test
+    printf("Hotel_info_read test completed.\n");
 }
 
+// Test function for customer_info_read
+void test_customer_info_read() {
+    printf("Testing customer_info_read function...\n");
+    customer_info_read(); // Call the function to test
+    printf("customer_info_read test completed.\n");
+}
 
-/**
- * Test runner function
- */
-int
-main(void) {
+int main() {
+    // Call your test functions here
+    test_Hotel_info_read();
+    test_customer_info_read();
 
-    /**
-     * Insert here your test functions
-     */
-    const struct CMUnitTest tests[] = {
-        cmocka_unit_test(null_test_success),
-    };
-
-
-    /* Run the tests */
-    return cmocka_run_group_tests(tests, NULL, NULL);
+    return 0;
 }
