@@ -28,7 +28,7 @@ typedef struct Hotel {
 } Hotel;
 
 void Hotel_info_read() {
-    f = fopen("Hotel.txt", "a");
+    f = fopen("../test/Hotel.txt", "a");
     if (f == NULL) {
         // handle error
     }
@@ -68,7 +68,7 @@ void Hotel_info_read() {
 }
 
 void customer_info_read() {
-    f = fopen("Hotel.txt", "r+");
+    f = fopen("../test/Hotel.txt", "r+");
     if (f == NULL) {
         // handle error
     }
@@ -140,7 +140,7 @@ void customer_info_read() {
     fclose(f);
 
     c.Cfull_name[strlen(c.Cfull_name) - 1] = '\0'; 
-    Users = fopen("users.txt", "a+");
+    Users = fopen("../test/users.txt", "a+");
     if (Users == NULL) {
         // handle error
     }
